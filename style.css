@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+*:focus {
+  outline: none;
+}
+body {
+  background-color: #2b004e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.task-container {
+  width: 600px;
+  min-height: 120px;
+  background-color: #e1e1e1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.task-header {
+  background-color: #6a2b8e;
+  color: #fff;
+  padding: 7px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-task {
+  background-color: #8e44ad;
+  border: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  line-height: 0.9;
+  color: #fff;
+  cursor: pointer;
+  font-size: 32px;
+  float: right;
+  position: relative;
+}
+.add-task::after {
+  content: "اضافه مهمه";
+  position: absolute;
+  top: 2px;
+  width: 85px;
+  height: 16px;
+  line-height: 1.1;
+  left: 75px;
+  font-size: 13px;
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  border-radius: 14px;
+  opacity: 0;
+  transition: 0.6s;
+}
+form {
+  width: 95%;
+  margin: 10px auto;
+  display: block;
+}
+form .input {
+  padding: 10px;
+  background-color: orange;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+form .input::placeholder {
+  color: black;
+  font-size: 16px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+form .input:focus::placeholder {
+  opacity: 0;
+}
+.add_tasks {
+  overflow-y: scroll;
+  max-height: 500px;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #efefef;
+  width: 95%;
+  margin: 10px auto;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  transition: 0.3s;
+}
+.task-item:hover {
+  box-shadow: 0 3px 15px rgba(97, 97, 97, 0.843);
+}
+.done {
+  background-color: #00e4ff;
+}
+.task-date span {
+  font-size: 12px;
+  color: #545454;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.task-actions button {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.task-actions button i {
+  color: white;
+}
+.task-actions button {
+  position: relative;
+}
+.task-actions button:nth-child(1) {
+  background-color: brown;
+}
+.task-actions button:nth-child(2) {
+  background-color: green;
+}
+.task-actions button:nth-child(3) {
+  background-color: rgb(8, 161, 200);
+}
+
+.task-actions button::before,
+.task-actions .examination::before {
+  position: absolute;
+  top: -17px;
+  width: 70px;
+  font-size: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  border-radius: 14px;
+  opacity: 0;
+  transition: 0.6s;
+  color: white;
+}
+
+.task-actions button:nth-child(1)::before {
+  content: "حذف المهمه";
+}
+.task-actions .complete-task.active::before {
+  content: "تمت المهمه";
+}
+.examination.active::before {
+  content: "ما زالت ...";
+}
+.task-actions button:nth-child(3)::before {
+  content: "تعديل المهمه";
+}
+.task-actions button:hover::before,
+.add-task:hover::after {
+  opacity: 1;
+}
