@@ -172,3 +172,13 @@ form .input:focus::placeholder {
 .add-task:hover::after {
   opacity: 1;
 }
+@media (max-width: 650px) {
+  .task-container {
+    width: 450px;
+  }
+}
+@media (max-width: 500px) {
+  .task-container {
+    width: 320px;
+  }
+}
